@@ -151,17 +151,22 @@ Premissas e interpretações estão detalhadas em [`docs/01-historias-de-usuario
 │   │   └── repositories/          # SQL (hierarchy_sql com a CTE recursiva)
 │   └── tests/
 ├── frontend/
-│   ├── nginx.conf
+│   ├── nginx.conf                 # serve o build e repassa /api ao backend
 │   └── src/
-│       ├── api/                   # cliente HTTP e tipos
+│       ├── main.tsx               # providers: React Query, sessão, notificações, rotas
+│       ├── App.tsx                # barra superior e rotas
+│       ├── styles.css             # tokens de design (cores, sombras, bordas) e estilos
+│       ├── api/                   # cliente HTTP tipado e tipos da API
 │       ├── session/               # líder atual (localStorage)
-│       ├── components/
-│       ├── pages/                 # Equipe, Avaliar, Histórico
-│       └── utils/
+│       ├── pages/                 # Equipe, Nova avaliação, Histórico
+│       ├── components/            # cartões, diálogo, notificações, medidor de nota, gráfico...
+│       └── utils/                 # formatação de datas e notas, prévia da nota
 └── docs/
     ├── 01-historias-de-usuario.md
     ├── 02-arquitetura.md
-    └── 03-api.md
+    ├── 03-api.md
+    ├── 04-front-end.md
+    └── imagens/                   # capturas de tela
 ```
 
 ## Documentação complementar
